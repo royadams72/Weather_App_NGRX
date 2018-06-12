@@ -9,12 +9,20 @@
   </tr>
   </thead>
   <tbody>
-  <tr>
+  <tr *ngFor="let city of cities">
+    <td scope="row">{{city.city}}</td>
+    <td scope="row">{{city.temps.temp1}}</td>
+    <td scope="row">{{city.temps.temp2}}</td>
+    <td scope="row">{{city.temps.temp3}}</td>
+    <td scope="row">{{city.temps.temp4}}</td>
+  </tr>
+
+  <!-- <tr>
     <td scope="row">London</td>
     <td scope="row">3 &deg;</td>
     <td scope="row">12.5 &deg;</td>
     <td scope="row">9 &deg;</td>
     <td scope="row">2 &deg;</td>
-  </tr>
+  </tr> -->
   </tbody>
 </table>

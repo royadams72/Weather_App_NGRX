@@ -63,3 +63,8 @@ export interface Weather {
 export interface Summary {
   city: string;
 }
+
+export interface Cities {
+  city: string;
+  temps:{}
+}

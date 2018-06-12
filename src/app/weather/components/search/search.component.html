@@ -5,7 +5,7 @@
            name="city"
            placeholder="City"
            type="text"
-           required>
+           required #city>
   </div>
-  <button class="btn-search btn btn-primary mt-3 col-4" type="submit" (click)="search()">Search</button>
+  <button class="btn-search btn btn-primary mt-3 col-4" type="button" (click)="search(city.value)">Search</button>
 </form>
