@@ -25,6 +25,7 @@ cities:Array<Cities> = []
     .map((data)=>{
       let cityWeather:Cities = {city:city, temps: {temp1:data.list[4].main.temp, temp2:data.list[6].main.temp, temp3:data.list[0].main.temp, temp4:data.list[2].main.temp}}
       this.cities.push(cityWeather);
+      console.log(this.cities)
       return this.cities;
     })
   }

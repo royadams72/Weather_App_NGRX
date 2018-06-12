@@ -4,13 +4,17 @@ import { AppRoutingModule } from './app.routing.module';
 import { WeatherModule } from './weather/weather.module';
 
 import { AppComponent } from './app.component';
-import { WeatherService } from './weather/weather.service';
+// import { WeatherService } from './weather/weather.service';
 import { HttpClientModule} from '@angular/common/http';
+import {storeData} from './weather/store/reducers/weather';
 import {StoreModule} from "@ngrx/store";
-
+import { EffectsModule } from '@ngrx/effects';
+import { WeatherEffects } from './weather/store/effects/weather';
+// , {initialState: undefined}
 export const reducers = {
-
+storeData
 };
+
 @NgModule({
   declarations: [
     AppComponent
@@ -18,11 +22,16 @@ export const reducers = {
   imports: [
     BrowserModule,
     AppRoutingModule,
+    StoreModule.forRoot(reducers),
+    EffectsModule.forRoot([
+      WeatherEffects
+    
+    ]),
     WeatherModule,
     HttpClientModule,
-    StoreModule.forRoot(reducers),
+ 
   ],
-  providers: [WeatherService],
+  // providers: [WeatherService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
