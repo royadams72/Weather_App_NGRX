@@ -6,10 +6,13 @@ import { WeatherModule } from './weather/weather.module';
 import { AppComponent } from './app.component';
 // import { WeatherService } from './weather/weather.service';
 import { HttpClientModule} from '@angular/common/http';
-import {storeData} from './weather/store/reducers/weather';
 import {StoreModule} from "@ngrx/store";
+// import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { EffectsModule } from '@ngrx/effects';
+import {storeData} from './weather/store/reducers/weather';
 import { WeatherEffects } from './weather/store/effects/weather';
+
+
 // , {initialState: undefined}
 export const reducers = {
 storeData
@@ -22,14 +25,14 @@ storeData
   imports: [
     BrowserModule,
     AppRoutingModule,
-    StoreModule.forRoot(reducers),
+    StoreModule.forRoot(reducers, {initialState: undefined}),
+    // StoreDevtoolsModule.instrument({maxAge: 25}),
+    WeatherModule,
+    HttpClientModule,
     EffectsModule.forRoot([
       WeatherEffects
     
     ]),
-    WeatherModule,
-    HttpClientModule,
- 
   ],
   // providers: [WeatherService],
   bootstrap: [AppComponent]

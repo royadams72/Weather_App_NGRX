@@ -10,7 +10,7 @@ export class SearchComponent {
   constructor() { }
 
   search(city) {
-    console.log(city)
+    // console.log(city)
     this.onSearchCity.emit(city)
     // TO BE IMPLEMENTED
   }

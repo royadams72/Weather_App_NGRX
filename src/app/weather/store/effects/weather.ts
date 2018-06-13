@@ -24,12 +24,10 @@ export class WeatherEffects {
           return this.weatherService.searchWeatherForCity(action.payload)
         })
     //   .debug("data received via the HTTP request")
-    .map(cityWeather =>  {
-        console.log(cityWeather);
-        return new LoadCitiesAction(cityWeather)
+    .map(cities =>  {
+        console.log(cities);
+        return new LoadCitiesAction(cities)
     });
-
-
-
+   
     // new UserThreadsLoadedAction(allUserData)
 }
