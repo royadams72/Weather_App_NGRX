@@ -10,20 +10,18 @@ import { AppState } from './store/app.state';
   selector: 'app-weather',
   template: `
   <app-search (onSearchCity)="citySearch($event)"></app-search>
-  <app-results [cities]="cities$"></app-results>  `
+  <app-results [cities]="cities$ | async"></app-results>  `
 })
 export class WeatherContainer{
   cities;
-  // cities$:Observable<Cities[]>;
+  cities$:Observable<Cities[]>;
 
   constructor(private weatherService: WeatherService, private store: Store<AppState>) {
-   this.cities = this.store.select(state => state.storeData).subscribe((data)=>{
-     console.log(data)
-   })
+   this.cities$ = this.store.select(state => state.storeData)
   }
   citySearch(city) {
+    console.log(this.cities$)
     this.store.dispatch({type: UPDATE_CITIES_ACTION, payload: city })
-    console.log(this.cities)
 
   }
 
