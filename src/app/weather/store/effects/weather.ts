@@ -11,10 +11,7 @@ import {Action} from "@ngrx/store";
 
 @Injectable()
 export class WeatherEffects {
-
-  constructor(private actions$: Actions, private weatherService: WeatherService) {
-    
-  }
+  constructor(private actions$: Actions, private weatherService: WeatherService) {}
 
   @Effect() cityWeather$: Observable<Action> = this.actions$
       .ofType<UpdateCitiesAction>(UPDATE_CITIES_ACTION)
@@ -25,7 +22,7 @@ export class WeatherEffects {
         })
     //   .debug("data received via the HTTP request")
     .map(cities =>  {
-        console.log(cities);
+        // console.log(cities);
         return new LoadCitiesAction(cities)
     });
    

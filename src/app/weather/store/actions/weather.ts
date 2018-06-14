@@ -20,7 +20,7 @@ export class UpdateCitiesAction implements Action {
     readonly type = UPDATE_CITIES_ACTION;
 
     constructor(public payload:string) {
-        console.log(this.payload)
+        // console.log(this.payload)
     }
 
 }
