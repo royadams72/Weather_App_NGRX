@@ -19,8 +19,8 @@ export class WeatherContainer{
     this.cities$ = this.store.select("storeData")
   }
   citySearch(city) {
-    this.store.dispatch({type: UPDATE_CITIES_ACTION, payload: city })
     console.log(this.cities$)
+    this.store.dispatch({type: UPDATE_CITIES_ACTION, payload: city })
 
   }
 

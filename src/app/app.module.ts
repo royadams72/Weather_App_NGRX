@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 // import { WeatherService } from './weather/weather.service';
 import { HttpClientModule} from '@angular/common/http';
 import {StoreModule} from "@ngrx/store";
-// import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { EffectsModule } from '@ngrx/effects';
 import {storeData} from './weather/store/reducers/weather';
 import { WeatherEffects } from './weather/store/effects/weather';
@@ -26,7 +26,7 @@ storeData
     BrowserModule,
     AppRoutingModule,
     StoreModule.forRoot(reducers, {initialState: undefined}),
-    // StoreDevtoolsModule.instrument({maxAge: 25}),
+    StoreDevtoolsModule.instrument({maxAge: 25}),
     WeatherModule,
     HttpClientModule,
     EffectsModule.forRoot([
