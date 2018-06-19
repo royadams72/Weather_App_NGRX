@@ -19,7 +19,6 @@ export class WeatherService {
   searchWeatherForCity(city):Observable<any> {
     // implement the service
     this.params.q = city;
-    // console.log(this.params)
     return this.http.get<Weather>(this.url + '/?q='+this.params.q+'&units='+this.params.units+'&cnt='+this.params.cnt+'&APPID='+this.params.APPID)
   }
 
