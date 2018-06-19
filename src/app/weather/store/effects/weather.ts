@@ -15,14 +15,14 @@ export class WeatherEffects {
 
   @Effect() cityWeather$: Observable<Action> = this.actions$
       .ofType<UpdateCitiesAction>(UPDATE_CITIES_ACTION)
-    //   .debug("action received")
+
       .switchMap(action => {
           console.log(action)
           return this.weatherService.searchWeatherForCity(action.payload)
         })
     //   .debug("data received via the HTTP request")
     .map(cities =>  {
-        // console.log(cities);
+
         return new LoadCitiesAction(cities)
     });
    

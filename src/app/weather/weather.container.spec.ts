@@ -4,11 +4,11 @@ import { WeatherContainer } from './weather.container';
 import { WeatherService } from './weather.service';
 import { HttpClientModule } from '@angular/common/http';
 import { StoreModule, Store } from '@ngrx/store';
-import { storeData } from './store/reducers/weather';
+import { cityWeather } from './store/reducers/weather';
 import { Cities } from '../model/weather';
 
 export const reducers = {
-  storeData
+  cityWeather
   };
 describe('WeatherContainer', () => {
   let component: WeatherContainer;

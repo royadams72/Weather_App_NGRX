@@ -9,13 +9,13 @@ import { HttpClientModule} from '@angular/common/http';
 import {StoreModule} from "@ngrx/store";
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { EffectsModule } from '@ngrx/effects';
-import {storeData} from './weather/store/reducers/weather';
+import {cityWeather} from './weather/store/reducers/weather';
 import { WeatherEffects } from './weather/store/effects/weather';
 
 
 
 export const reducers = {
-storeData
+cityWeather
 };
 
 @NgModule({
