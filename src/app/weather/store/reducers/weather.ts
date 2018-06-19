@@ -1,6 +1,7 @@
 import {Action} from "@ngrx/store";
-import {Cities} from '../../../model/weather'
+import {Cities, Weather} from '../../../model/weather'
 import { UPDATE_CITIES_ACTION, LOAD_CITIES_ACTION } from "../actions/weather";
+import { mapCityWeatherToView } from "../shared/mapping-functions";
 // import { AppState } from "../app.state";
 
 export function cityWeather(state:Cities[] = [], action:Action) : any {
@@ -23,7 +24,10 @@ function  handleUpdateCitiesAction(state, action):Cities[]{
 
 function  handleLoadCitiesAction(state, action):Cities[]{
     // const newState = Object.assign({},state);
-    let newState = action.payload.slice(); 
-    console.log(action.payload)
+    let weather:Weather = action.payload
+    let cityWeather:Cities = mapCityWeatherToView(weather)
+    let newState:Cities[] = state.slice(); 
+    newState.push(cityWeather)
+    // console.log(action.payload)
     return newState;
 }
