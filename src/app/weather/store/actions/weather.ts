@@ -1,6 +1,6 @@
 import { Action } from '@ngrx/store';
 import {Cities} from '../../../model/weather'
-// TO BE IMPLEMENTED IF YOU DECIDE TO USE NG-RX
+
 
 export const UPDATE_CITIES_ACTION = 'UPDATE_CITIES_ACTION';
 export const LOAD_CITIES_ACTION = 'LOAD_CITIES_ACTION';
