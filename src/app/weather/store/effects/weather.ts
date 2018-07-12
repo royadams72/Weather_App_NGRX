@@ -1,4 +1,4 @@
-// TO BE IMPLEMENTED IF YOU DECIDE TO USE NG-RX
+
 import { Injectable } from '@angular/core';
 import {Actions, Effect} from "@ngrx/effects";
 import 'rxjs/add/operator/switchMap';
